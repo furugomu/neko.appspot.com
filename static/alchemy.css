@@ -1,0 +1,46 @@
+@media screen and (max-width: 320px) {
+  body { font-size: 11px; }
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+}
+h1 {
+  color: gold;
+  font-family: serif;
+  margin: 0 0 0.5em;
+}
+p {
+  margin: 0.5em 0.1em;
+}
+:link, :visited {
+  color: lightblue;
+}
+table {
+  width: 100%;
+}
+table, tr, td, th {
+  border-collapse: collapse;
+  border: none gray 1px;
+}
+table {
+}
+tr {
+  border-style: dotted none;
+  cursor: pointer;
+}
+th {
+  border-right: dotted gray 1px;
+  font-weight: bold;
+  color: silver;
+  text-align: left;
+}
+#reset {
+  float: right;
+}
+.highlight {
+  background: gold;
+  color: black;
+}

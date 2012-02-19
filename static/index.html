@@ -1,0 +1,41 @@
+<!DOCTYPE html><!--*- encoding: UTF-8 -*-->
+<html>
+ <head>
+  <meta charset=UTF-8>
+  <title>Skyrim Alchemy Cheatsheet</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="alchemy.css">
+  <link rel="canonical" href="http://neko.appspot.com/">
+  <script src="jquery.min.js"></script>
+  <script src="jquery.mustache.js"></script>
+  <script src="augment.min.js"></script>
+  <script src="data.js"></script>
+  <script src="alchemy.js"></script>
+  <script type="text/x-mustache-template" id="template">
+   <tr class="{{className}}">
+    <th>{{ingredient_t}}</th>
+    {{#effects}}
+    <td class="{{className}}" data-name="{{name}}">{{name_t}}</td>
+    {{/effects}}
+   </tr>
+   </p>
+  </script>
+ </head>
+ <body>
+  <h1>Skyrim Alchemy Cheatsheet</h1>
+  <p>
+   <a href="?lang=ja">日本語</a> / <a href="?lang=en">English</a>
+  </p>
+  <p>
+   Filter: <span id="filter">none</span>
+   <button id="reset">Reset</button>
+  </p>
+  <table>
+   <thead><tr>
+   <tbody id="container"></tbody>
+  </table>
+  <address>
+   author: <a href="//twitter.com/furugomu">@furugomu</a>
+  </address>
+ </body>
+</html>
