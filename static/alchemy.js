@@ -8,21 +8,24 @@ else {
   var _ = function(s) { return ja[s] || s; }
 }
 jQuery(function($) {
+  data.sort(function(a, b) {
+    return _(a.ingredient) < _(b.ingredient) ? -1 : 1;
+  });
   var $container = $("#container");
   var $template = $("#template");
-  for (var ingredient in data) {
-    var effects = data[ingredient].map(function(name, i, all) {
+  data.forEach(function(entry) {
+    var effects = entry.effects.map(function(name, i, all) {
       return {className: classify(name), name: name, name_t: _(name)};
     });
     var className = effects.map(function(x){return x.className}).join(" ");
     var html = $template.mustache({
-      ingredient: ingredient,
-      ingredient_t: _(ingredient),
+      ingredient: entry.ingredient,
+      ingredient_t: _(entry.ingredient),
       effects: effects,
       className: className,
     });
     $container.append(html);
-  }
+  });
   $container.filter = function(effects) {
     var classNames = effects.map(classify);
     $('.highlight').removeClass('highlight');
